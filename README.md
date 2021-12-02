@@ -1,0 +1,2 @@
+# AI-Mynote
+AI Mynote
