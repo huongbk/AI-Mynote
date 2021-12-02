@@ -1,2 +1,3 @@
-# AI-Mynote
-AI Mynote
+# AI Mynote
+
+Ghi chú một số thuật ngữ trong trí tuệ nhân tạo
