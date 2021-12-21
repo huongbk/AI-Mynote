@@ -8,7 +8,7 @@
 
 ---
 
-- [ ] Introduce ML
+- [x] Introduce ML
 
 - [ ] Linear regression
 
@@ -151,22 +151,73 @@
             - Apriori algorithm refers to the algorithm which is used to calculate the association rules between objects. It means how two or more objects are related to one another. In other words, we can say that the apriori algorithm is an association rule leaning that analyzes that people who bought product A also bought product B.
             - Apriori is an algorithm used for Association Rule Mining. It searches for a series of frequent sets of items in the datasets. It builds on associations and correlations between the itemsets. It is the algorithm behind “You may also like” where you commonly saw in recommendation platforms.
 
-      - Dimensionality reduction
+      - [Dimensionality reduction](https://machinelearningmastery.com/dimensionality-reduction-for-machine-learning/)
+
         - While more data generally yields more accurate results, it can also impact the performance of machine learning algorithms (e.g. overfitting) and it can also make it difficult to visualize datasets.
         - Dimensionality reduction is a technique used when the number of features, or dimensions, in a given dataset is too high. It reduces the number of data inputs to a manageable size while also preserving the integrity of the dataset as much as possible.
         - It is commonly used in the preprocessing data stage, and there are a few different dimensionality reduction methods that can be used, such as:
-          - [_Principal component analysis - PCA with python_](https://towardsdatascience.com/pca-using-python-scikit-learn-e653f8989e60)
-          - _Singular value decomposition SVD_
-          - _Autoencoders_
 
-  - [Semi-supervised learning](https://www.ibm.com/cloud/learn/machine-learning#:~:text=methods%2C%20and%20more.-,Semi%2Dsupervised%20learning%C2%A0,-Semi%2Dsupervised%20learning)
+          - [_Principal component analysis - PCA with python_](https://towardsdatascience.com/pca-using-python-scikit-learn-e653f8989e60)
+
+            - Principal component analysis (PCA) is a type of dimensionality reduction algorithm which is used to reduce redundancies and to compress datasets through feature extraction.
+            - This method uses a linear transformation to create a new data representation, yielding a set of "principal components."
+              - The first principal component is the direction which maximizes the variance of the dataset.
+              - While the second principal component also finds the maximum variance in the data, it is completely uncorrelated to the first principal component, yielding a direction that is perpendicular, or orthogonal, to the first component.
+              - This process repeats based on the number of dimensions, where a next principal component is the direction orthogonal to the prior components with the most variance.
+
+          - [_Singular value decomposition SVD_](https://www.geeksforgeeks.org/singular-value-decomposition-svd/)
+
+            - Singular value decomposition (SVD) is another dimensionality reduction approach which factorizes a matrix, A, into three, low-rank matrices.
+            - SVD is denoted by the formula, A = USVT
+              - Where U and V are orthogonal matrices
+              - S is a diagonal matrix, and S values are considered singular values of matrix A.
+            - Similar to PCA, it is commonly used to reduce noise and compress data, such as image files.
+
+          - [_Autoencoders_](https://www.ibm.com/cloud/learn/unsupervised-learning#:~:text=as%20image%20files.-,Autoencoders,-Autoencoders%20leverage%20neural)
+            - Autoencoders leverage neural networks to compress data and then recreate a new representation of the original data’s input.
+            - The hidden layer specifically acts as a bottleneck to compress the input layer prior to reconstructing within the output layer.
+            - The stage from the input layer to the hidden layer is referred to as “encoding” while the stage from the hidden layer to the output layer is known as “decoding.”
+
+  - [Semi-supervised learning](https://www.analyticsvidhya.com/blog/2017/09/pseudo-labelling-semi-supervised-learning-technique/#h2_5)
 
     - Semi-supervised learning offers a happy medium between supervised and unsupervised learning. During training, it uses a smaller labeled data set to guide classification and feature extraction from a larger, unlabeled data set.
     - Semi-supervised learning can solve the problem of having not enough labeled data (or not being able to afford to label enough data) to train a supervised learning algorithm.
+    - Semi-supervised learning uses pseudo labeling to train the model with less labeled training data than supervised learning.
+    - The process can combine various neural network models and training ways. The whole working of semi-supervised learning is explained in the below points:
+      - Firstly, it trains the model with less amount of training data similar to the supervised learning models. The training continues until the model gives accurate results.
+      - The algorithms use the unlabeled dataset with pseudo labels in the next step, and now the result may not be accurate.
+      - Now, the labels from labeled training data and pseudo labels data are linked together.
+      - The input data in labeled training data and unlabeled training data are also linked.
+      - In the end, again train the model with the new combined input as did in the first step. It will reduce errors and improve the accuracy of the model.
 
 - [Reinforcement learning](https://www.ibm.com/cloud/learn/machine-learning#:~:text=What%27s%20the%20Difference%3F%22-,Reinforcement%20machine%20learning,-Reinforcement%20machine%20learning)
 
-  - Reinforcement machine learning is a behavioral machine learning model that is similar to supervised learning, but the algorithm isn’t trained using sample data. This model learns as it goes by using trial and error. A sequence of successful outcomes will be reinforced to develop the best recommendation or policy for a given problem.
+  - Reinforcement machine learning is a behavioral machine learning model that is similar to supervised learning, but the algorithm isn’t trained using sample data.
+  - _This model learns as it goes by using trial and error_. A sequence of successful outcomes will be reinforced to develop the best recommendation or policy for a given problem.
+  - [_Terms used in Reinforcement Learning_](https://www.javatpoint.com/reinforcement-learning#Terms)
+
+    - _Agent()_: An entity that can perceive/explore the environment and act upon it.
+    - _Environment()_: A situation in which an agent is present or surrounded by. In RL, we assume the stochastic environment, which means it is random in nature.
+    - _Action()_: Actions are the moves taken by an agent within the environment.
+    - _State()_: State is a situation returned by the environment after each action taken by the agent.
+    - _Reward()_: A feedback returned to the agent from the environment to evaluate the action of the agent.
+    - _Policy()_: Policy is a strategy applied by the agent for the next action based on the current state.
+    - _Value()_: It is expected long-term retuned with the discount factor and opposite to the short-term reward.
+    - _Q-value()_: It is mostly similar to the value, but it takes one additional parameter as a current action (a).
+
+  - [Application](https://www.javatpoint.com/reinforcement-learning#Applications)
+
+    - Robotics: RL is used in Robot navigation, Robo-soccer, walking, juggling, etc.
+    - Control: RL can be used for adaptive control such as Factory processes, admission control in telecommunication, and Helicopter pilot is an example of reinforcement learning.
+    - Game Playing: RL can be used in Game playing such as tic-tac-toe, chess, etc.
+    - Chemistry: RL can be used for optimizing the chemical reactions.
+    - Business: RL is now used for business strategy planning.
+    - Manufacturing: In various automobile manufacturing companies, the robots use deep reinforcement learning to pick goods and put them in some containers.
+    - Finance Sector: The RL is currently used in the finance sector for evaluating trading strategies.
+
+  - [See overview about Reinforcement learning!](https://www.javatpoint.com/reinforcement-learning)
+  - [Analytic Vidhya Blog](https://www.analyticsvidhya.com/blog/2021/02/introduction-to-reinforcement-learning-for-beginners/)
+  - [Tutorial, Exams, Projects and Courses](https://neptune.ai/blog/best-reinforcement-learning-tutorials-examples-projects-and-courses)
 
 - [Steps to Complete a Machine Learning Project](https://www.analyticsvidhya.com/blog/2021/04/steps-to-complete-a-machine-learning-project/)
 
