@@ -12,7 +12,7 @@
 
 - [x] Linear regression
 
-- [ ] Logistic regression
+- [x] Logistic regression
 
 - [ ] Neural network
 
@@ -237,7 +237,7 @@
 
 ---
 
-- [What is Linear regression?](https://www.ibm.com/topics/linear-regression)
+- [What is Linear regression? IBM](https://www.ibm.com/topics/linear-regression)
 
   - Linear regression analysis is used to predict the value of a variable based on the value of another variable. The variable you want to predict is called the dependent variable. The variable you are using to predict the other variable's value is called the independent variable.
 
@@ -296,7 +296,55 @@
 
 ---
 
-- Content
+- [What is Logistic regression?](https://ml-cheatsheet.readthedocs.io/en/latest/logistic_regression.html)
+
+  - Logistic regression is a classification algorithm used to assign observations to a discrete set of classes.
+  - Unlike linear regression which outputs continuous number values, logistic regression transforms its output using the logistic sigmoid function to return a probability value which can then be mapped to two or more discrete classes.
+
+- Types
+
+  - Binary (Pass/Fail)
+  - Multi (Cats, Dogs, Sheep)
+  - Ordinal (Low, Medium, High)
+
+- Binary classification
+
+  - Pass/Fail
+  - Activation function
+    - [_Sigmoid activation_](https://ml-cheatsheet.readthedocs.io/en/latest/logistic_regression.html#sigmoid-activation)
+      - In order to map predicted values to probabilities, we use the sigmoid function.
+      - The function maps any real value into another value between 0 and 1.
+  - [Decision boundary](https://ml-cheatsheet.readthedocs.io/en/latest/logistic_regression.html#decision-boundary)
+    - Our current prediction function returns a probability score between 0 and 1.
+    - In order to map this to a discrete class (true/false, cat/dog), we select a threshold value or tipping point _above_ which we will classify values into class 1 and _below_ which we classify values into class 2.
+  - [Make prediction](https://ml-cheatsheet.readthedocs.io/en/latest/logistic_regression.html#making-predictions)
+
+    - Using our knowledge of sigmoid functions and decision boundaries, we can now write a prediction function.
+    - A prediction function in logistic regression returns the probability of our observation being positive, "True" or “Yes”.
+    - [_Math & Predict Function_](https://ml-cheatsheet.readthedocs.io/en/latest/logistic_regression.html#:~:text=in%20class%201.-,Math,-Let%E2%80%99s%20use%20the)
+
+  - [Cost function](https://ml-cheatsheet.readthedocs.io/en/latest/logistic_regression.html#cost-function)
+
+    - [_Binary Cross-entropy loss_](https://towardsdatascience.com/understanding-binary-cross-entropy-log-loss-a-visual-explanation-a3ac6025181a)
+    - [_Math_](https://ml-cheatsheet.readthedocs.io/en/latest/logistic_regression.html#:~:text=optimal%20global%20minimum.-,Math,-Instead%20of%20Mean)
+
+  - Gradient descent
+    - To minimize our cost, we use Gradient Descent just like before in Linear Regression.
+    - [_Math & Code_](https://ml-cheatsheet.readthedocs.io/en/latest/logistic_regression.html#gradient-descent)
+
+- [Multclass Logistic Regression](https://ml-cheatsheet.readthedocs.io/en/latest/logistic_regression.html#multiclass-logistic-regression)
+
+  - Instead of y=0,1 we will expand our definition so that y=0,1...n.
+  - Basically we re-run binary classification multiple times, once for each class.
+
+  - Procedure
+
+    - Divide the problem into `n+1` binary classification problems (+1 because the index starts at 0?).
+    - For each class…
+    - Predict the probability the observations are in that single class.
+    - prediction = <math>max(probability of the classes)
+
+  - [Andrew Ng explained](https://youtu.be/-EIfb6vFJzc?t=298)
 
 ---
 
