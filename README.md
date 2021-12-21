@@ -10,7 +10,7 @@
 
 - [x] Introduce ML
 
-- [ ] Linear regression
+- [x] Linear regression
 
 - [ ] Logistic regression
 
@@ -237,7 +237,58 @@
 
 ---
 
-- Content
+- [What is Linear regression?](https://www.ibm.com/topics/linear-regression)
+
+  - Linear regression analysis is used to predict the value of a variable based on the value of another variable. The variable you want to predict is called the dependent variable. The variable you are using to predict the other variable's value is called the independent variable.
+
+    - There are simple linear regression calculators that use a “least squares” method to discover the best-fit line for a set of paired data. You then estimate the value of X (dependent variable) from Y (independent variable)
+
+  - Two type
+
+    - Simple regression
+
+      - Simple linear regression uses traditional slope-intercept form, where m and b are the variables our algorithm will try to “learn” to produce the most accurate predictions. x represents our input data and y represents our prediction.
+      - `y = mx + b` or `Sales = Weight * Radio + Bias`
+
+    - Multivariable regression
+
+      - A more complex, multi-variable linear equation might look like this, where w represents the coefficients, or weights, our model will try to learn.
+      - `f(x,y,z)= w1x + w2y + w3z` or `Sales = W1*Radio + W2*TV + W3*News`
+
+    - [Gradient descent](https://ml-cheatsheet.readthedocs.io/en/latest/gradient_descent.html#)
+
+      - Gradient descent is an optimization algorithm used to minimize some function by iteratively moving in the direction of steepest descent as defined by the negative of the gradient.
+      - In machine learning, we use gradient descent to update the parameters of our model. Parameters refer to coefficients in Linear Regression and weights in neural networks.
+      - Example:
+
+        ```text
+        Gradient descent
+
+            Bước 1: Khởi tạo giá trị x tùy ý
+          Bước 2: Gán x = x – learning_rate * f'(x). Với learning_rate là hằng số không âm ví dụ learning_rate = 0.001
+        Bước 3: Tính lại f(x):
+
+        - Nếu f(x) đủ nhỏ thì dừng lại.
+        - Ngược lại tiếp tục bước 2.
+        ```
+
+    - [Lost functions](https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html)
+
+      - Use [Mean Square Error - MSE - L2](https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html#mse-l2) as cost function. MSE measures the average squared difference between an observation’s actual and predicted values.
+
+    - See [more](https://ml-cheatsheet.readthedocs.io/en/latest/linear_regression.html) about Linear regression!
+
+    - Some types Lost functions
+
+      - [Cross-entropy loss](https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html#cross-entropy) or log loss, measures the performance of a classification model whose output is a probability value between 0 and 1.
+
+      - [Mean Absolute Error - MAE - L1 loss](https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html#mae-l1)
+
+      - [Mean Square Error - MSE - L2 loss](https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html#mse-l2)
+
+      - Hinge
+      - Huber
+      - Kullback-Leibler
 
 ---
 
