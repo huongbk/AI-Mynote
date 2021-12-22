@@ -16,7 +16,7 @@
 
 - [x] Neural network
 
-- [ ] Convolutional neural network
+- [x] Convolutional neural network
 
 - [ ] CNN Techniques
 
@@ -482,7 +482,135 @@
 
 ---
 
-- Content
+**Underfitting/Overfitting**
+
+- [_Underfitting_](https://www.ibm.com/cloud/learn/underfitting)
+
+  - Underfitting is a scenario in data science where a data model is unable to capture the relationship between the input and output variables accurately, generating a high `error rate on both the training set and unseen data.`
+  - It occurs when a model is too simple, which can be a result of a model `needing more training time`, `more input features`, or `less regularization`.
+  - How to avoid underfitting?
+    - `Increase model complexity.`
+    - `Increase the number of features, performing feature engineering.`
+    - `Remove noise from the data.`
+    - `Increase the number of epochs or increase the duration of training to get better results.`
+
+- [_Overfitting_](https://www.ibm.com/cloud/learn/overfitting)
+
+  - Overfitting is a concept in data science, which occurs when a statistical model fits exactly against its training data.
+  - When this happens, the algorithm unfortunately cannot perform accurately against unseen data, defeating its purpose.
+  - How to avoid overfitting?
+
+    - `Early stopping`: As we mentioned earlier, this method seeks to pause training before the model starts learning the noise within the model.
+    - `Train with more data`: Otherwise, you could just continue to add more complexity to the model, causing it to overfit.
+    - `Data augmentation`: While it is better to inject clean, relevant data into your training data, sometimes noisy data is added to make a model more stable. However, this method should be done sparingly.
+    - `Feature selection`: Feature selection is the process of identifying the most important ones within the training data and then eliminating the irrelevant or redundant ones. This is commonly mistaken for dimensionality reduction, but it is different. However, both methods help to simplify your model to establish the dominant trend in the data.
+    - [`Regularization`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html): If overfitting occurs when a model is too complex, it makes sense for us to reduce the number of features.
+
+      - But what if we don’t know which inputs to eliminate during the feature selection process? If we don’t know which features to remove from our model, regularization methods can be particularly helpful.
+
+        - Regularization applies a “penalty” to the input parameters with the larger coefficients, which subsequently limits the amount of variance in the model.
+        - While there are a number of regularization methods, such as:
+
+          - [`Data Augmentation`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#data-augmentation)
+          - [`Dropout`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#dropout)
+          - [`Early Stopping`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#early-stopping)
+          - [`Ensembling`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#ensembling)
+          - [`Injecting Noise`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#injecting-noise)
+          - [`L1 Regularization`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#l1-regularization) or [`Lasso regularization`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#l1-regularization)
+          - [`L2 Regularization`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#l2-regularization)
+
+        - _They all seek to identify and reduce the noise within the data._
+
+    - `Ensemble methods`: Ensemble learning methods are made up of a set of classifiers `e.g. decision trees` and their predictions are aggregated to identify the most popular result.
+
+      - The most well-known ensemble methods are [`bagging and boosting`](https://www.geeksforgeeks.org/bagging-vs-boosting-in-machine-learning/).
+        - `Bagging`
+          - It is a homogeneous weak learners’ model that learns from each other independently in parallel and combines them for determining the model average.
+            ![Bagging](https://media.geeksforgeeks.org/wp-content/uploads/20210707140912/Bagging.png)
+        - `Bootsting`
+          - It is also a homogeneous weak learners’ model but works differently from Bagging. In this model, learners learn sequentially and adaptively to improve model predictions of a learning algorithm.
+            ![Bootsting](https://media.geeksforgeeks.org/wp-content/uploads/20210707140911/Boosting.png)
+
+**What problem with Neural Network?**
+
+- Blackbox
+- Quality predicts need large amount of data
+- Computationally expensive, requires hight processing time for large neural network
+- Hardware Dependence
+
+**Image processing**
+
+- [Kernel](<https://en.wikipedia.org/wiki/Kernel_(image_processing)>)
+
+  - In image processing, a kernel, convolution matrix, or mask is a small matrix used for blurring, sharpening, embossing, edge detection, and more. This is accomplished by doing a convolution between the kernel and an image.
+
+- [RGB Image](http://spsprashanth.blogspot.com/2016/08/rgb.html)
+
+  - RGB represents Red, Green and Blue. It is an additive color model. This three colors(RGB) can mix together to form any color.
+  - The main purpose of the RGB color model is for the sensing, representation and display of images in electronic systems, such as televisions and computers.
+  - Each level in RGB is represented by the range of decimal numbers from 0 to 255.
+  - The total number of available colors is 256 x 256 x 256 or 16,777,216 possible colors.
+  - In HTML, the color for a page background or text font is specified by an RGB value, expressed with six digits in hexadecimal format as shown below:
+
+  ![RGB](https://4.bp.blogspot.com/-cY2aQB_7tRs/V8WVV87gjcI/AAAAAAAAAkM/S2lmFMe6ULI5TGeGV76MDmXc_YMKW_AWgCEw/s640/ColorImageRGB.gif)
+
+  ![Image RGB](https://media.geeksforgeeks.org/wp-content/uploads/Pixel.jpg)
+
+**Convolutional operation**
+
+- [`Convolution layer (CONV)`](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks)
+
+  - The convolution layer (CONV) uses filters that perform convolution operations as it is scanning the `input I` with respect to its dimensions. Its hyperparameters include the `filter F` and `stride S`. The resulting `output O` is called feature map or activation map.
+  - [CS231n Stanford](https://cs231n.github.io/convolutional-networks/)
+
+- `Pooling layer`
+
+  - The pooling layer (POOL) is a `downsampling operation`, typically applied after a convolution layer, which does some spatial invariance.
+  - In particular, `max pooling` and `average pooling` are special kinds of pooling where the maximum and average value is taken, respectively.
+
+- `Fully Connected (FC)`
+
+  - The fully connected layer (FC) operates on a `flattened` input where each input is connected to all neurons. If present, `FC layers` are usually found towards the end of CNN architectures and can be used to optimize objectives such as class scores.
+    ![Plattened to FC](https://stanford.edu/~shervine/teaching/cs-230/illustrations/fully-connected-ltr.png?32caf9e07c79d652faa292812579d063)
+
+- [`Filter hyperparameters`](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks#filter)
+
+  - In machine learning, a `hyperparameter` is a parameter whose value is used to control the learning process.
+
+    - _Dimensions_ of a filter - số lớp filter chồng lên nhau
+    - _Stride_ - bước nhảy
+    - _Padding_ - lớp đệm zero bên ngoài
+
+  - [_Tuning hyperparameter see here!_](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks#hyperparameters)
+
+    - `I` is the length of the input volume size,
+    - `F` is the length of the filter
+    - `P` is the amount of zero padding
+    - `S` is the stride, then the output size `O` of the feature map along that dimension is given by function: `O = (I - F + P_start + P_end)/S + 1`
+      ![Function](https://stanford.edu/~shervine/teaching/cs-230/illustrations/parameter-compatibility-en.jpeg?bc91caf0473dc42f1a495946f67726d3)
+
+**Building blocks (Convolutional layer, pooling layer)**
+
+![CNN](https://editor.analyticsvidhya.com/uploads/90650dnn2.jpeg)
+
+**ImageNet challenge**
+
+- [ILSVRC - The ImageNet Large Scale Visual Recognition Challenge](https://www.image-net.org/challenges/LSVRC/) is a benchmark in object category classification and detection on hundreds of object categories and millions of images. The challenge has been run annually from 2010 to present, attracting participation from more than fifty institutions.
+
+**VGG 16**
+
+- ![VGG16](https://neurohive.io/wp-content/uploads/2018/11/vgg16-1-e1542731207177.png)
+
+**CNN applications**
+
+- Business applications of Convolutional Neural Networks.
+  - Image Classification
+  - Search Engines
+  - Recommender Systems
+  - Social Media
+  - Medical Image Computing
+  - Healthcare Data Science / Predictive Analytics
+  - Etc.
 
 ---
 
