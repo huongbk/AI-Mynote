@@ -14,7 +14,7 @@
 
 - [x] Logistic regression
 
-- [ ] Neural network
+- [x] Neural network
 
 - [ ] Convolutional neural network
 
@@ -34,23 +34,23 @@
 
 ---
 
-- [What is Artificial Intelligent?](https://www.ibm.com/cloud/learn/what-is-artificial-intelligence#:~:text=the%20human%20mind.-,What%20is%20artificial%20intelligence%3F,-While%20a%20number)
+- [**What is Artificial Intelligent?**](https://www.ibm.com/cloud/learn/what-is-artificial-intelligence#:~:text=the%20human%20mind.-,What%20is%20artificial%20intelligence%3F,-While%20a%20number)
 
   - It is the science and engineering of making intelligent machines, especially intelligent computer programs. It is related to the similar task of using computers to understand human intelligence, but AI does not have to confine itself to methods that are biologically observable.
   - History of Artificial Intelligent: [_Key dates and names_](https://www.ibm.com/cloud/learn/what-is-artificial-intelligence#toc-history-of--2jPgsXm)
 
-- [What is Machine learning?](https://www.ibm.com/cloud/learn/machine-learning#:~:text=within%20businesses%20today.-,What%20is%20machine%20learning%3F,-Machine%20learning%20is)
+- [**What is Machine learning?**](https://www.ibm.com/cloud/learn/machine-learning#:~:text=within%20businesses%20today.-,What%20is%20machine%20learning%3F,-Machine%20learning%20is)
 
   - Machine learning is a branch of artificial intelligence (AI) and computer science which focuses on the use of data and algorithms to imitate the way that humans learn, gradually improving its accuracy.
 
-- [How machine learning works?](https://www.ibm.com/cloud/learn/machine-learning#toc-how-machin-NoVMSZI_)
+- [**How machine learning works?**](https://www.ibm.com/cloud/learn/machine-learning#toc-how-machin-NoVMSZI_)
 
   - UC Berkeley (link resides outside IBM) breaks out the learning system of a machine learning algorithm into three main parts.
     - A Decision Process: In general, machine learning algorithms are used to make a prediction or classification. Based on some input data, which can be labelled or unlabeled, your algorithm will produce an estimate about a pattern in the data.
     - An Error Function: An error function serves to evaluate the prediction of the model. If there are known examples, an error function can make a comparison to assess the accuracy of the model.
     - An Model Optimization Process: If the model can fit better to the data points in the training set, then weights are adjusted to reduce the discrepancy between the known example and the model estimate. The algorithm will repeat this evaluate and optimize process, updating weights autonomously until a threshold of accuracy has been met.
 
-- Machine learning methods from [IBM Blog]()
+- **Machine learning methods** [IBM Blog](https://www.ibm.com/cloud/learn/artificial-intelligence)
 
   - [Supervised learning](https://www.ibm.com/cloud/learn/supervised-learning)
 
@@ -190,7 +190,7 @@
       - The input data in labeled training data and unlabeled training data are also linked.
       - In the end, again train the model with the new combined input as did in the first step. It will reduce errors and improve the accuracy of the model.
 
-- [Reinforcement learning](https://www.ibm.com/cloud/learn/machine-learning#:~:text=What%27s%20the%20Difference%3F%22-,Reinforcement%20machine%20learning,-Reinforcement%20machine%20learning)
+- [**Reinforcement learning**](https://www.ibm.com/cloud/learn/machine-learning#:~:text=What%27s%20the%20Difference%3F%22-,Reinforcement%20machine%20learning,-Reinforcement%20machine%20learning)
 
   - Reinforcement machine learning is a behavioral machine learning model that is similar to supervised learning, but the algorithm isn’t trained using sample data.
   - _This model learns as it goes by using trial and error_. A sequence of successful outcomes will be reinforced to develop the best recommendation or policy for a given problem.
@@ -219,7 +219,7 @@
   - [Analytic Vidhya Blog](https://www.analyticsvidhya.com/blog/2021/02/introduction-to-reinforcement-learning-for-beginners/)
   - [Tutorial, Exams, Projects and Courses](https://neptune.ai/blog/best-reinforcement-learning-tutorials-examples-projects-and-courses)
 
-- [Steps to Complete a Machine Learning Project](https://www.analyticsvidhya.com/blog/2021/04/steps-to-complete-a-machine-learning-project/)
+- [**Steps to Complete a Machine Learning Project**](https://www.analyticsvidhya.com/blog/2021/04/steps-to-complete-a-machine-learning-project/)
 
   - Data collection
   - Data preparation
@@ -237,7 +237,7 @@
 
 ---
 
-- [What is Linear regression? IBM](https://www.ibm.com/topics/linear-regression)
+- [**What is Linear regression?** IBM](https://www.ibm.com/topics/linear-regression)
 
   - Linear regression analysis is used to predict the value of a variable based on the value of another variable. The variable you want to predict is called the dependent variable. The variable you are using to predict the other variable's value is called the independent variable.
 
@@ -296,18 +296,18 @@
 
 ---
 
-- [What is Logistic regression?](https://ml-cheatsheet.readthedocs.io/en/latest/logistic_regression.html)
+- [**What is Logistic regression?**](https://ml-cheatsheet.readthedocs.io/en/latest/logistic_regression.html)
 
   - Logistic regression is a classification algorithm used to assign observations to a discrete set of classes.
   - Unlike linear regression which outputs continuous number values, logistic regression transforms its output using the logistic sigmoid function to return a probability value which can then be mapped to two or more discrete classes.
 
-- Types
+- **Types**
 
   - Binary (Pass/Fail)
   - Multi (Cats, Dogs, Sheep)
   - Ordinal (Low, Medium, High)
 
-- Binary classification
+- **Binary classification**
 
   - Pass/Fail
   - Activation function
@@ -332,7 +332,7 @@
     - To minimize our cost, we use Gradient Descent just like before in Linear Regression.
     - [_Math & Code_](https://ml-cheatsheet.readthedocs.io/en/latest/logistic_regression.html#gradient-descent)
 
-- [Multclass Logistic Regression](https://ml-cheatsheet.readthedocs.io/en/latest/logistic_regression.html#multiclass-logistic-regression)
+- [**Multclass Logistic Regression**](https://ml-cheatsheet.readthedocs.io/en/latest/logistic_regression.html#multiclass-logistic-regression)
 
   - Instead of y=0,1 we will expand our definition so that y=0,1...n.
   - Basically we re-run binary classification multiple times, once for each class.
@@ -352,7 +352,129 @@
 
 ---
 
-- Content
+- [**What is Neural network?**](https://ml-cheatsheet.readthedocs.io/en/latest/nn_concepts.html#neural-network)
+
+  - Neural networks are a class of machine learning algorithms used to model complex patterns in datasets using _multiple hidden layers_ and _non-linear activation functions_. A neural network takes an input, passes it through multiple layers of hidden neurons (mini-functions with unique coefficients that must be learned), and outputs a prediction representing the combined input of all the neurons.
+
+    - Neural networks are trained iteratively using optimization techniques like gradient descent.
+    - After each cycle of training, an error metric is calculated based on the difference between prediction and target.
+      - The derivatives of this error metric are calculated and propagated back through the network using a technique called backpropagation.
+      - Each neuron’s coefficients (weights) are then adjusted relative to how much they contributed to the total error.
+    - This process is repeated iteratively until the network error drops below an acceptable threshold.
+
+  - [IBM overview](https://www.ibm.com/cloud/learn/neural-networks)
+
+- **Neural**
+
+  - A neuron takes a group of weighted inputs, applies an activation function, and returns an output.
+    - The neuron then applies an activation function to the “sum of weighted inputs” from each incoming synapse and passes the result on to all the neurons in the next layer.
+
+- **Synapse** _- Khớp thần kinh_
+
+  - Synapses are like roads in a neural network.
+  - Synapses are connect inputs to neurons, neurons to neurons, and neurons to outputs.
+    - In order to get from one neuron to another, you have to travel along the synapse paying the “toll” (weight) along the way.
+      - Each connection between two neurons has a _unique synapse_ with a _unique weight_ attached to it.
+      - When we talk about updating weights in a network, we’re really talking about adjusting _the weights on these synapses_.
+
+- **Weights**
+
+  - Weights are values that control the strength of the connection between two neurons. That is, inputs are typically multiplied by weights, and that defines how much influence the input will have on the output.
+    - In other words: when the inputs are transmitted between neurons, the weights are applied to the inputs along with an additional value (the `bias`)
+
+- **Bias**
+
+  - Bias terms are additional constants attached to neurons and added to the weighted input before the activation function is applied. Bias terms help models represent patterns that do not necessarily pass through the origin.
+    - Bias in Neural Networks can be thought of as analogous to the role of a constant in a linear function, whereby the line is effectively transposed by the constant value.
+
+- **Layers**
+
+  - Input layer
+
+    - Holds the data your model will train on.
+    - Each neuron in the input layer represents a unique attribute in your dataset (e.g. height, hair color, etc.).
+
+  - Hidden layer
+
+    - Sits between the input and output layers and applies an activation function before passing on the results. There are often multiple hidden layers in a network.
+    - In traditional networks, hidden layers are typically `fully-connected layers` each neuron receives input from all the previous layer’s neurons and sends its output to every neuron in the next layer.
+
+  - Output layer
+    - The final layer in a network. It receives input from the previous hidden layer, optionally applies an activation function, and returns an `output` representing your model’s prediction.
+
+- **Weighted Input**
+
+  - `A neuron’s input equals the sum of weighted outputs from all neurons in the previous layer`. Each input is multiplied by the weight associated with the synapse connecting the input to the current neuron.
+    - If there are 3 inputs or neurons in the previous layer, each neuron in the current layer will have 3 distinct weights one for each each synapse.
+  - Notice, it’s exactly the `same equation we use with linear regression!`
+
+    - In fact, a neural network with a single neuron is the same as linear regression! The only `difference` is the neural network post-processes the weighted input with an activation function.
+
+    ![Neural network!](https://www.researchgate.net/profile/Adem-Tekerek-2/publication/335903047/figure/fig1/AS:805611931443200@1569084260672/Proposed-artificial-neural-network-model-3-10-1-Neural-network-weight-vectors-are.png)
+
+- **Activation Functions**
+
+  - Activation functions live inside neural network layers and modify the data they receive before passing it to the next layer.
+  - Activation functions give neural networks their power - allowing them to model complex non-linear relationships.
+
+    - By modifying inputs with non-linear functions neural networks can model highly complex relationships between features.
+    - Popular activation functions include [Relu](https://ml-cheatsheet.readthedocs.io/en/latest/activation_functions.html#activation-relu) and [Sigmoid](https://ml-cheatsheet.readthedocs.io/en/latest/activation_functions.html#sigmoid).
+
+  - Activation functions typically have the following properties:
+    - Non-linear
+    - Continuously differentiable
+    - Fixed Range
+
+- **Loss Functions**
+
+  - A loss function, or cost function, is a wrapper around our model’s predict function that tells us “how good” the model is at making predictions for a given set of parameters.
+  - The loss function has its own curve and its own derivatives. The slope of this curve tells us how to change our parameters to make the model more accurate!
+
+    - We use the model to make predictions.
+    - We use the cost function to update our parameters.
+    - Our cost function can take a variety of forms as there are many different cost functions available.
+
+  - Popular loss functions include: [MSE (L2)](https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html#mse) and [Cross-entropy Loss](https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html#cross-entropy).
+    - MSE or Mean Squared Error or L2 loss
+    - Cross-entropy loss, or log loss, measures the performance of a classification model whose output is a probability value between 0 and 1.
+
+- **Optimization Algorithms**
+
+  - Optimizers are algorithms or methods used to change the _attributes_ of your neural network such as `weights` and `learning rate` in order to `reduce the losses`.
+
+    - How you should change your weights or learning rates of your neural network to reduce the losses is defined by the optimizers you use.
+    - Optimization algorithms or strategies are responsible for `reducing the losses` and to provide the `most accurate` results possible.
+
+  - Some [optimization algorithms](https://towardsdatascience.com/optimizers-for-training-neural-network-59450d71caf6) in neural network as below
+
+    - _Gradient Descent_
+    - _Stochastic Gradient Descent_
+    - _Mini-Batch Gradient Descent_
+    - _Momentum_
+    - _Nesterov Accelerated Gradient_
+    - _Adagrad_
+    - _AdaDelta_
+    - _Adam_
+
+      - `Adam` is the best optimizers if you wants to train the neural network in less time and more efficiently
+      - If you want to use `Gradient descent` algorithm than `Mini-batch Gradient descent` is the best option.
+
+- **Gradient Accumulation**
+
+  - Gradient accumulation is a mechanism to `split` the `batch` of samples - used for training a neural network into several `mini-batches` of samples that will be run sequentially.
+
+  - When do you need Gradient accumulation?
+
+    - This is used to enable using large batch sizes that `require more GPU memory than available.`
+    - Gradient accumulation helps in doing so by `using mini-batches` that require an amount of GPU memory that can be satisfied.
+
+  - How it works?
+
+    - Gradient accumulation means `running all mini-batches sequentially` (generally on the same GPU) `while accumulating their calculated gradients and not updating the model variables` - the weights and biases of the model.
+    - The model variables must not be updated `during` the accumulation in order to ensure all mini-batches use the same model variable values to calculate their gradients.
+    - Only `after` accumulating the gradients of all those mini-batches will we generate and apply the updates for the model variables.
+
+    ![Gradient accumulation](https://ml-cheatsheet.readthedocs.io/en/latest/_images/gradient_accumulation.png)
 
 ---
 
