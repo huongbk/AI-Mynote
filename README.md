@@ -2,7 +2,7 @@
 
 ---
 
-### Deep Learning Basic
+## Deep Learning Basic
 
 - Sumary content from Deep learning basic course [AI4E](https://www.facebook.com/nttuan8.AI4E/)
 
@@ -30,7 +30,7 @@
 
 ---
 
-#### Introduce ML
+### Introduce ML
 
 ---
 
@@ -233,7 +233,7 @@
 
 ---
 
-#### Linear regression
+### Linear regression
 
 ---
 
@@ -292,7 +292,7 @@
 
 ---
 
-#### Logistic regression
+### Logistic regression
 
 ---
 
@@ -348,7 +348,7 @@
 
 ---
 
-#### Neural network
+### Neural network
 
 ---
 
@@ -478,7 +478,7 @@
 
 ---
 
-#### Convolutional neural network
+### Convolutional neural network
 
 ---
 
@@ -486,7 +486,7 @@
 
 ---
 
-#### CNN Techniques
+### CNN Techniques
 
 ---
 
@@ -494,7 +494,7 @@
 
 ---
 
-#### Autoencoder
+### Autoencoder
 
 ---
 
@@ -502,7 +502,7 @@
 
 ---
 
-#### GAN
+### GAN
 
 ---
 
@@ -510,7 +510,7 @@
 
 ---
 
-#### Object detection
+### Object detection
 
 ---
 
@@ -518,7 +518,7 @@
 
 ---
 
-#### RNN
+### RNN
 
 ---
 
