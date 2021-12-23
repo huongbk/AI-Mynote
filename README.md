@@ -18,7 +18,7 @@
 
 - [x] Convolutional neural network
 
-- [ ] CNN Techniques
+- [x] CNN Techniques
 
 - [ ] Autoencoder
 
@@ -618,7 +618,125 @@
 
 ---
 
-- Content
+[**Forward propagation**](https://ml-cheatsheet.readthedocs.io/en/latest/forwardpropagation.html#)
+
+- Forward propagation is how neural networks make predictions. Input data is “forward propagated” through the network layer by layer to the final layer which outputs a prediction.
+
+**Backpropagation**
+
+- The goals of backpropagation are straightforward: adjust each weight in the network in proportion to how much it contributes to overall error. If we iteratively reduce each weight’s error, eventually we’ll have a series of weights that produce good predictions.
+
+- Compare
+
+  - _Forward Propagation_: Receive input data, process the information, and generate output.
+  - _Backward Propagation_: Calculate error and update the parameters of the network.
+
+- [The Backpropagation Algorithm](https://towardsdatascience.com/understanding-backpropagation-algorithm-7bb3aa2f95fd)
+
+  - Backpropagation algorithm is probably the most fundamental building block in a neural network. It was first introduced in 1960s and almost 30 years later (1989) popularized by Rumelhart, Hinton and Williams in a paper called “Learning representations by back-propagating errors”.
+  - The algorithm is used to effectively train a neural network through a method called chain rule. In simple terms, after each forward pass through a network, backpropagation performs a backward pass while adjusting the model’s parameters (weights and biases).
+  - Túm lại:
+
+    - Tính đạo hàm của Loss function với mỗi hệ số `Weight`, `bias` bằng chainrule rồi điều chỉnh trọng số theo
+
+  - Recommendation:
+    - [_Chain rule refresher_](https://ml-cheatsheet.readthedocs.io/en/latest/backpropagation.html#chain-rule-refresher)
+    - [_Backpropagation Tuan Nguyen_](https://nttuan8.com/bai-4-backpropagation/)
+    - [_NLP Processing with Deep learning_](https://www.youtube.com/watch?v=isPiE-DBagM&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6&ab_channel=StanfordUniversitySchoolofEngineering)
+
+[**Vanishing and Exploding Gradients in Neural Networks**](https://www.numpyninja.com/post/vanishing-and-exploding-gradients-in-neural-networks)
+
+- What is gradient?
+
+  - The Gradient is nothing but a derivative of loss function with respect to the weights. It is used to updates the weights to minimize the loss function during the back propagation in neural networks.
+
+- What is Vanishing Gradients?
+
+  - Vanishing Gradient occurs when the derivative or slope will get `smaller and smaller` as we go backward with every layer during backpropagation.
+  - When weights update is very small or exponential small, the training time takes too much longer, and in the worst case, this _may completely stop the neural network training._
+    - A vanishing Gradient problem _occurs with the sigmoid and tanh activation_ function because the derivatives of the sigmoid and tanh activation functions are between 0 to 0.25 and 0–1.
+    - Therefore, the updated weight values are small, and the new weight values are very similar to the old weight values. This leads to Vanishing Gradient problem.
+  - We can avoid this problem using the ReLU activation function because the gradient is 0 for negatives and zero input, and 1 for positive input. ( or _Leaky Relu_)
+
+- What is Exploding Gradients?
+
+  - Exploding gradient occurs when the derivatives or slope will get `bigger and bigger` as we go backward with every layer during backpropagation. This situation is the exact opposite of the vanishing gradients.
+
+    - This problem happens _because of weights, not because of the activation function_. Due to high weight values, the derivatives will also higher so that the new weight varies a lot to the older weight, and the gradient will never converge.
+    - So it may result in oscillating around minima and never come to a global minima point.
+
+  - [How to identify exploding gradients?](https://analyticsindiamag.com/complete-guide-to-exploding-gradient-problem/#:~:text=How%20to%20identify%20exploding%20gradients%3F)
+
+    - If the model weights become unexpectedly large in the end.
+    - Your model has a poor loss.
+    - Or the model displays NaN loss whilst training.
+    - The gradient value for error persists over 1.0 for every subsequent iteration during training.
+
+  - [How to deal with an exploding gradient?](https://analyticsindiamag.com/complete-guide-to-exploding-gradient-problem/#:~:text=How%20to%20deal%20with%20an%20exploding%20gradient%3F)
+    - Re-Design the Network Model
+    - Use LSTM’s (Long short term memory)
+    - Gradient Clipping
+    - Weight Regularization
+
+**Resnet introduction**
+
+- `ResNet` is a Convolutional Neural Network (CNN) architecture that `overcame the “vanishing gradient”` problem, making it possible to construct networks with up to thousands of convolutional layers, which `outperform shallower networks.`
+
+- Why resnet works?
+
+  - Here, we have something called Residual blocks.
+  - Many `Residual blocks` are stacked together to form a ResNet.
+  - We have `Skipped connections` which are the major part of ResNet.
+  - The following image below was provided by the authors in the original paper which denotes how a residual network works.
+
+    - The idea is to connect the input of a layer directly to the output of a layer after skipping a few connections.
+    - We can see here, `x` is the input to the layer which we are directly using to connect to a layer after skipping the identity connections and if we think the output from identity connection to be `F(x)`.
+    - Then we can say the output will be `F(x) + x`.
+
+    <img src="https://neurohive.io/wp-content/uploads/2019/01/resnet-e1548261477164.png" width="60%">
+
+- Paper [_Deep Residual Learning for Image Recognition_](https://arxiv.org/pdf/1512.03385.pdf)
+
+**Transfer learning**
+
+- [What is Transfer learning?](https://developer.ibm.com/articles/transfer-learning-for-deep-learning/)
+
+  - Transfer learning is the method of starting with a pre-trained model and training it for a new — related — problem domain. The pre-trained network serves as transferred knowledge to be applied in another domain.
+
+- Methods for transfer learning
+
+  - [_Feature transfer_](<https://developer.ibm.com/articles/transfer-learning-for-deep-learning/#:~:text=The%20idea%20behind%20feature%20transfer%20is%20then%20to%20use%20the%20input%20and%20feature%2Dextraction%20layers%20that%20have%20been%20trained%20with%20a%20given%20data%20set%20(with%20their%20weights%20and%20structure%20frozen)%20and%20train%20a%20new%20classification%20layer%20for%20the%20related%20problem%20domain>)
+
+    - The idea behind feature transfer is then to use the input and feature-extraction layers that have been trained with a given data set (with their weights and structure frozen) and train a new classification layer for the related problem domain.
+
+      <img src="https://developer.ibm.com/developer/default/articles/transfer-learning-for-deep-learning/images/Figure3.png">
+
+  - [_Fine-tuning_](https://developer.ibm.com/articles/transfer-learning-for-deep-learning/#:~:text=domains%20are%20similar.-,Fine%2Dtuning,-In%20the%20prior)
+
+    - This fine-tuning could mean that we train the later layers of the deep learning network (meaning adjust the weights based upon the classification error) while leaving the earlier layers frozen.
+      <img src="https://developer.ibm.com/developer/default/articles/transfer-learning-for-deep-learning/images/Figure4.png">
+
+  - [_Using a pre-trained model_](https://developer.ibm.com/articles/transfer-learning-for-deep-learning/#:~:text=to%20be%20classified.-,Using%20a%20pre%2Dtrained%20model,-With%20feature%20transfer)
+
+    - Using a pre-trained model, the model can be refined through feature transfer (train the classification layer) or by freezing some of the early convolutional layers and retraining the later ones.
+    - Given that the early convolutional layers detect general features that can be independent of the problem, retraining (or fine-tuning) the later convolutional layers where features are more specific and dependent on the problem can be useful.
+
+- When use Transfer learning?
+  <img src="https://cdn.hackernoon.com/hn-images/1*xGpYptYPEqGl6gWr6bHZEQ.png" width="60%">
+
+  - [See more here!](https://phamdinhkhanh.github.io/2020/04/15/TransferLearning.html#6-kinh-nghi%E1%BB%87m-transfer-learning)
+
+**Data augmentation**
+
+- Data augmentation in data analysis are techniques used to increase the amount of data by adding slightly modified copies of already existing data or newly created synthetic data from existing data. It acts as a regularizer and helps reduce overfitting when training a machine learning model.
+- [_Top 13 Data Augmentation Techniques: Comprehensive Guide_](https://research.aimultiple.com/data-augmentation-techniques/)
+  <img src="https://research.aimultiple.com/wp-content/uploads/2021/04/data-augmentation-techniques-800x450.png">
+
+**Data synthesis**
+
+- Synthetic data, as the name suggests, is data that is artificially created rather than being generated by actual events. It is often created with the help of algorithms and is used for a wide range of activities, including as test data for new products and tools, for model validation, and in AI model training.
+
+- [_The Ultimate Guide to Synthetic Data: Uses, Benefits & Tools_](https://research.aimultiple.com/synthetic-data/)
 
 ---
 
