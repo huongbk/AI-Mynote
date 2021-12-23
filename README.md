@@ -20,7 +20,7 @@
 
 - [x] [CNN Techniques](#cnn-techniques)
 
-- [ ] [Autoencoder](#autoencoder)
+- [x] [Autoencoder](#autoencoder)
 
 - [ ] [GAN](#gan)
 
@@ -482,128 +482,127 @@
 
 ---
 
-**Underfitting/Overfitting**
+- **Underfitting/Overfitting**
 
-- [_Underfitting_](https://www.ibm.com/cloud/learn/underfitting)
+  - [_Underfitting_](https://www.ibm.com/cloud/learn/underfitting)
 
-  - Underfitting is a scenario in data science where a data model is unable to capture the relationship between the input and output variables accurately, generating a high `error rate on both the training set and unseen data.`
-  - It occurs when a model is too simple, which can be a result of a model `needing more training time`, `more input features`, or `less regularization`.
-  - How to avoid underfitting?
-    - `Increase model complexity.`
-    - `Increase the number of features, performing feature engineering.`
-    - `Remove noise from the data.`
-    - `Increase the number of epochs or increase the duration of training to get better results.`
+    - Underfitting is a scenario in data science where a data model is unable to capture the relationship between the input and output variables accurately, generating a high `error rate on both the training set and unseen data.`
+    - It occurs when a model is too simple, which can be a result of a model `needing more training time`, `more input features`, or `less regularization`.
+    - How to avoid underfitting?
+      - `Increase model complexity.`
+      - `Increase the number of features, performing feature engineering.`
+      - `Remove noise from the data.`
+      - `Increase the number of epochs or increase the duration of training to get better results.`
 
-- [_Overfitting_](https://www.ibm.com/cloud/learn/overfitting)
+  - [_Overfitting_](https://www.ibm.com/cloud/learn/overfitting)
 
-  - Overfitting is a concept in data science, which occurs when a statistical model fits exactly against its training data.
-  - When this happens, the algorithm unfortunately cannot perform accurately against unseen data, defeating its purpose.
-  - How to avoid overfitting?
+    - Overfitting is a concept in data science, which occurs when a statistical model fits exactly against its training data.
+    - When this happens, the algorithm unfortunately cannot perform accurately against unseen data, defeating its purpose.
+    - How to avoid overfitting?
 
-    - `Early stopping`: As we mentioned earlier, this method seeks to pause training before the model starts learning the noise within the model.
-    - `Train with more data`: Otherwise, you could just continue to add more complexity to the model, causing it to overfit.
-    - `Data augmentation`: While it is better to inject clean, relevant data into your training data, sometimes noisy data is added to make a model more stable. However, this method should be done sparingly.
-    - `Feature selection`: Feature selection is the process of identifying the most important ones within the training data and then eliminating the irrelevant or redundant ones. This is commonly mistaken for dimensionality reduction, but it is different. However, both methods help to simplify your model to establish the dominant trend in the data.
-    - [`Regularization`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html): If overfitting occurs when a model is too complex, it makes sense for us to reduce the number of features.
+      - `Early stopping`: As we mentioned earlier, this method seeks to pause training before the model starts learning the noise within the model.
+      - `Train with more data`: Otherwise, you could just continue to add more complexity to the model, causing it to overfit.
+      - `Data augmentation`: While it is better to inject clean, relevant data into your training data, sometimes noisy data is added to make a model more stable. However, this method should be done sparingly.
+      - `Feature selection`: Feature selection is the process of identifying the most important ones within the training data and then eliminating the irrelevant or redundant ones. This is commonly mistaken for dimensionality reduction, but it is different. However, both methods help to simplify your model to establish the dominant trend in the data.
+      - [`Regularization`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html): If overfitting occurs when a model is too complex, it makes sense for us to reduce the number of features.
 
-      - But what if we don’t know which inputs to eliminate during the feature selection process? If we don’t know which features to remove from our model, regularization methods can be particularly helpful.
+        - But what if we don’t know which inputs to eliminate during the feature selection process? If we don’t know which features to remove from our model, regularization methods can be particularly helpful.
 
-        - Regularization applies a “penalty” to the input parameters with the larger coefficients, which subsequently limits the amount of variance in the model.
-        - While there are a number of regularization methods, such as:
+          - Regularization applies a “penalty” to the input parameters with the larger coefficients, which subsequently limits the amount of variance in the model.
+          - While there are a number of regularization methods, such as:
 
-          - [`Data Augmentation`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#data-augmentation)
-          - [`Dropout`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#dropout)
-          - [`Early Stopping`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#early-stopping)
-          - [`Ensembling`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#ensembling)
-          - [`Injecting Noise`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#injecting-noise)
-          - [`L1 Regularization`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#l1-regularization) or [`Lasso regularization`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#l1-regularization)
-          - [`L2 Regularization`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#l2-regularization)
+            - [`Data Augmentation`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#data-augmentation)
+            - [`Dropout`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#dropout)
+            - [`Early Stopping`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#early-stopping)
+            - [`Ensembling`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#ensembling)
+            - [`Injecting Noise`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#injecting-noise)
+            - [`L1 Regularization`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#l1-regularization) or [`Lasso regularization`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#l1-regularization)
+            - [`L2 Regularization`](https://ml-cheatsheet.readthedocs.io/en/latest/regularization.html#l2-regularization)
 
-        - _They all seek to identify and reduce the noise within the data._
+          - _They all seek to identify and reduce the noise within the data._
 
-    - `Ensemble methods`: Ensemble learning methods are made up of a set of classifiers `e.g. decision trees` and their predictions are aggregated to identify the most popular result.
+      - `Ensemble methods`: Ensemble learning methods are made up of a set of classifiers `e.g. decision trees` and their predictions are aggregated to identify the most popular result.
 
-      - The most well-known ensemble methods are [`bagging and boosting`](https://www.geeksforgeeks.org/bagging-vs-boosting-in-machine-learning/).
-        - `Bagging`
-          - It is a homogeneous weak learners’ model that learns from each other independently in parallel and combines them for determining the model average.
-            ![Bagging](https://media.geeksforgeeks.org/wp-content/uploads/20210707140912/Bagging.png)
-        - `Bootsting`
-          - It is also a homogeneous weak learners’ model but works differently from Bagging. In this model, learners learn sequentially and adaptively to improve model predictions of a learning algorithm.
-            ![Bootsting](https://media.geeksforgeeks.org/wp-content/uploads/20210707140911/Boosting.png)
+        - The most well-known ensemble methods are [`bagging and boosting`](https://www.geeksforgeeks.org/bagging-vs-boosting-in-machine-learning/).
+          - `Bagging`
+            - It is a homogeneous weak learners’ model that learns from each other independently in parallel and combines them for determining the model average.
+              ![Bagging](https://media.geeksforgeeks.org/wp-content/uploads/20210707140912/Bagging.png)
+          - `Bootsting`
+            - It is also a homogeneous weak learners’ model but works differently from Bagging. In this model, learners learn sequentially and adaptively to improve model predictions of a learning algorithm.
+              ![Bootsting](https://media.geeksforgeeks.org/wp-content/uploads/20210707140911/Boosting.png)
 
-**What problem with Neural Network?**
+- **What problem with Neural Network?**
 
-- Blackbox
-- Quality predicts need large amount of data
-- Computationally expensive, requires hight processing time for large neural network
-- Hardware Dependence
+  - Blackbox
+  - Quality predicts need large amount of data
+  - Computationally expensive, requires hight processing time for large neural network
+  - Hardware Dependence
 
-**Image processing**
+- **Image processing**
 
-- [Kernel](<https://en.wikipedia.org/wiki/Kernel_(image_processing)>)
+  - [Kernel](<https://en.wikipedia.org/wiki/Kernel_(image_processing)>)
 
-  - In image processing, a kernel, convolution matrix, or mask is a small matrix used for blurring, sharpening, embossing, edge detection, and more. This is accomplished by doing a convolution between the kernel and an image.
+    - In image processing, a kernel, convolution matrix, or mask is a small matrix used for blurring, sharpening, embossing, edge detection, and more. This is accomplished by doing a convolution between the kernel and an image.
 
-- [RGB Image](http://spsprashanth.blogspot.com/2016/08/rgb.html)
+  - [RGB Image](http://spsprashanth.blogspot.com/2016/08/rgb.html)
 
-  - RGB represents Red, Green and Blue. It is an additive color model. This three colors(RGB) can mix together to form any color.
-  - The main purpose of the RGB color model is for the sensing, representation and display of images in electronic systems, such as televisions and computers.
-  - Each level in RGB is represented by the range of decimal numbers from 0 to 255.
-  - The total number of available colors is 256 x 256 x 256 or 16,777,216 possible colors.
-  - In HTML, the color for a page background or text font is specified by an RGB value, expressed with six digits in hexadecimal format as shown below:
+    - RGB represents Red, Green and Blue. It is an additive color model. This three colors(RGB) can mix together to form any color.
+    - The main purpose of the RGB color model is for the sensing, representation and display of images in electronic systems, such as televisions and computers.
+    - Each level in RGB is represented by the range of decimal numbers from 0 to 255.
+    - The total number of available colors is 256 x 256 x 256 or 16,777,216 possible colors.
+    - In HTML, the color for a page background or text font is specified by an RGB value, expressed with six digits in hexadecimal format as shown below:
 
-  ![RGB](https://4.bp.blogspot.com/-cY2aQB_7tRs/V8WVV87gjcI/AAAAAAAAAkM/S2lmFMe6ULI5TGeGV76MDmXc_YMKW_AWgCEw/s640/ColorImageRGB.gif)
+    ![RGB](https://4.bp.blogspot.com/-cY2aQB_7tRs/V8WVV87gjcI/AAAAAAAAAkM/S2lmFMe6ULI5TGeGV76MDmXc_YMKW_AWgCEw/s640/ColorImageRGB.gif)
 
-  ![Image RGB](https://media.geeksforgeeks.org/wp-content/uploads/Pixel.jpg)
+    ![Image RGB](https://media.geeksforgeeks.org/wp-content/uploads/Pixel.jpg)
 
-**Convolutional operation**
+- **Convolutional operation**
 
-- [`Convolution layer (CONV)`](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks)
+  - [`Convolution layer (CONV)`](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks)
 
-  - The convolution layer (CONV) uses filters that perform convolution operations as it is scanning the `input I` with respect to its dimensions. Its hyperparameters include the `filter F` and `stride S`. The resulting `output O` is called feature map or activation map.
-  - [CS231n Stanford](https://cs231n.github.io/convolutional-networks/)
+    - The convolution layer (CONV) uses filters that perform convolution operations as it is scanning the `input I` with respect to its dimensions. Its hyperparameters include the `filter F` and `stride S`. The resulting `output O` is called feature map or activation map.
+    - [CS231n Stanford](https://cs231n.github.io/convolutional-networks/)
 
-- `Pooling layer`
+  - `Pooling layer`
 
-  - The pooling layer (POOL) is a `downsampling operation`, typically applied after a convolution layer, which does some spatial invariance.
-  - In particular, `max pooling` and `average pooling` are special kinds of pooling where the maximum and average value is taken, respectively.
+    - The pooling layer (POOL) is a `downsampling operation`, typically applied after a convolution layer, which does some spatial invariance.
+    - In particular, `max pooling` and `average pooling` are special kinds of pooling where the maximum and average value is taken, respectively.
 
-- `Fully Connected (FC)`
+  - `Fully Connected (FC)`
 
-  - The fully connected layer (FC) operates on a `flattened` input where each input is connected to all neurons. If present, `FC layers` are usually found towards the end of CNN architectures and can be used to optimize objectives such as class scores.
-    ![Plattened to FC](https://stanford.edu/~shervine/teaching/cs-230/illustrations/fully-connected-ltr.png?32caf9e07c79d652faa292812579d063)
+    - The fully connected layer (FC) operates on a `flattened` input where each input is connected to all neurons. If present, `FC layers` are usually found towards the end of CNN architectures and can be used to optimize objectives such as class scores.
+      ![Plattened to FC](https://stanford.edu/~shervine/teaching/cs-230/illustrations/fully-connected-ltr.png?32caf9e07c79d652faa292812579d063)
 
-- [`Filter hyperparameters`](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks#filter)
+  - [`Filter hyperparameters`](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks#filter)
 
-  - In machine learning, a `hyperparameter` is a parameter whose value is used to control the learning process.
+    - In machine learning, a `hyperparameter` is a parameter whose value is used to control the learning process.
 
-    - _Dimensions_ of a filter - số lớp filter chồng lên nhau
-    - _Stride_ - bước nhảy
-    - _Padding_ - lớp đệm zero bên ngoài
+      - _Dimensions_ of a filter - số lớp filter chồng lên nhau
+      - _Stride_ - bước nhảy
+      - _Padding_ - lớp đệm zero bên ngoài
 
-  - [_Tuning hyperparameter see here!_](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks#hyperparameters)
+    - [_Tuning hyperparameter see here!_](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks#hyperparameters)
 
-    - `I` is the length of the input volume size,
-    - `F` is the length of the filter
-    - `P` is the amount of zero padding
-    - `S` is the stride, then the output size `O` of the feature map along that dimension is given by function: `O = (I - F + P_start + P_end)/S + 1`
-      ![Function](https://stanford.edu/~shervine/teaching/cs-230/illustrations/parameter-compatibility-en.jpeg?bc91caf0473dc42f1a495946f67726d3)
+      - `I` is the length of the input volume size,
+      - `F` is the length of the filter
+      - `P` is the amount of zero padding
+      - `S` is the stride, then the output size `O` of the feature map along that dimension is given by function: `O = (I - F + P_start + P_end)/S + 1`
+        ![Function](https://stanford.edu/~shervine/teaching/cs-230/illustrations/parameter-compatibility-en.jpeg?bc91caf0473dc42f1a495946f67726d3)
 
-**Building blocks (Convolutional layer, pooling layer)**
+- **Building blocks (Convolutional layer, pooling layer)**
 
-![CNN](https://editor.analyticsvidhya.com/uploads/90650dnn2.jpeg)
+  ![CNN](https://editor.analyticsvidhya.com/uploads/90650dnn2.jpeg)
 
-**ImageNet challenge**
+- **ImageNet challenge**
 
-- [ILSVRC - The ImageNet Large Scale Visual Recognition Challenge](https://www.image-net.org/challenges/LSVRC/) is a benchmark in object category classification and detection on hundreds of object categories and millions of images. The challenge has been run annually from 2010 to present, attracting participation from more than fifty institutions.
+  - [ILSVRC - The ImageNet Large Scale Visual Recognition Challenge](https://www.image-net.org/challenges/LSVRC/) is a benchmark in object category classification and detection on hundreds of object categories and millions of images. The challenge has been run annually from 2010 to present, attracting participation from more than fifty institutions.
 
-**VGG 16**
+- **VGG 16**
 
-- ![VGG16](https://neurohive.io/wp-content/uploads/2018/11/vgg16-1-e1542731207177.png)
+  ![VGG16](https://www.researchgate.net/profile/Max-Ferguson/publication/322512435/figure/fig3/AS:697390994567179@1543282378794/Fig-A1-The-standard-VGG-16-network-architecture-as-proposed-in-32-Note-that-only.png)
 
-**CNN applications**
+- **CNN applications**
 
-- Business applications of Convolutional Neural Networks.
   - Image Classification
   - Search Engines
   - Recommender Systems
@@ -618,125 +617,126 @@
 
 ---
 
-[**Forward propagation**](https://ml-cheatsheet.readthedocs.io/en/latest/forwardpropagation.html#)
+- [**Forward propagation**](https://ml-cheatsheet.readthedocs.io/en/latest/forwardpropagation.html#)
 
-- Forward propagation is how neural networks make predictions. Input data is “forward propagated” through the network layer by layer to the final layer which outputs a prediction.
+  - Forward propagation is how neural networks make predictions. Input data is “forward propagated” through the network layer by layer to the final layer which outputs a prediction.
 
-**Backpropagation**
+- **Backpropagation**
 
-- The goals of backpropagation are straightforward: adjust each weight in the network in proportion to how much it contributes to overall error. If we iteratively reduce each weight’s error, eventually we’ll have a series of weights that produce good predictions.
+  - The goals of backpropagation are straightforward: adjust each weight in the network in proportion to how much it contributes to overall error. If we iteratively reduce each weight’s error, eventually we’ll have a series of weights that produce good predictions.
 
-- Compare
+  - Compare
 
-  - _Forward Propagation_: Receive input data, process the information, and generate output.
-  - _Backward Propagation_: Calculate error and update the parameters of the network.
+    - _Forward Propagation_: Receive input data, process the information, and generate output.
+    - _Backward Propagation_: Calculate error and update the parameters of the network.
 
-- [The Backpropagation Algorithm](https://towardsdatascience.com/understanding-backpropagation-algorithm-7bb3aa2f95fd)
+  - [The Backpropagation Algorithm](https://towardsdatascience.com/understanding-backpropagation-algorithm-7bb3aa2f95fd)
 
-  - Backpropagation algorithm is probably the most fundamental building block in a neural network. It was first introduced in 1960s and almost 30 years later (1989) popularized by Rumelhart, Hinton and Williams in a paper called “Learning representations by back-propagating errors”.
-  - The algorithm is used to effectively train a neural network through a method called chain rule. In simple terms, after each forward pass through a network, backpropagation performs a backward pass while adjusting the model’s parameters (weights and biases).
-  - Túm lại:
+    - Backpropagation algorithm is probably the most fundamental building block in a neural network. It was first introduced in 1960s and almost 30 years later (1989) popularized by Rumelhart, Hinton and Williams in a paper called “Learning representations by back-propagating errors”.
+    - The algorithm is used to effectively train a neural network through a method called chain rule. In simple terms, after each forward pass through a network, backpropagation performs a backward pass while adjusting the model’s parameters (weights and biases).
+    - Túm lại:
 
-    - Tính đạo hàm của Loss function với mỗi hệ số `Weight`, `bias` bằng chainrule rồi điều chỉnh trọng số theo
+      - Tính đạo hàm của Loss function với mỗi hệ số `Weight`, `bias` bằng chainrule rồi điều chỉnh trọng số theo
 
-  - Recommendation:
-    - [_Chain rule refresher_](https://ml-cheatsheet.readthedocs.io/en/latest/backpropagation.html#chain-rule-refresher)
-    - [_Backpropagation Tuan Nguyen_](https://nttuan8.com/bai-4-backpropagation/)
-    - [_NLP Processing with Deep learning_](https://www.youtube.com/watch?v=isPiE-DBagM&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6&ab_channel=StanfordUniversitySchoolofEngineering)
+    - Recommendation:
+      - [_Chain rule refresher_](https://ml-cheatsheet.readthedocs.io/en/latest/backpropagation.html#chain-rule-refresher)
+      - [_Backpropagation Tuan Nguyen_](https://nttuan8.com/bai-4-backpropagation/)
+      - [_NLP Processing with Deep learning_](https://www.youtube.com/watch?v=isPiE-DBagM&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6&ab_channel=StanfordUniversitySchoolofEngineering)
 
-[**Vanishing and Exploding Gradients in Neural Networks**](https://www.numpyninja.com/post/vanishing-and-exploding-gradients-in-neural-networks)
+- [**Vanishing and Exploding Gradients in Neural Networks**](https://www.numpyninja.com/post/vanishing-and-exploding-gradients-in-neural-networks)
 
-- What is gradient?
+  - What is gradient?
 
-  - The Gradient is nothing but a derivative of loss function with respect to the weights. It is used to updates the weights to minimize the loss function during the back propagation in neural networks.
+    - The Gradient is nothing but a derivative of loss function with respect to the weights. It is used to updates the weights to minimize the loss function during the back propagation in neural networks.
 
-- What is Vanishing Gradients?
+  - What is Vanishing Gradients?
 
-  - Vanishing Gradient occurs when the derivative or slope will get `smaller and smaller` as we go backward with every layer during backpropagation.
-  - When weights update is very small or exponential small, the training time takes too much longer, and in the worst case, this _may completely stop the neural network training._
-    - A vanishing Gradient problem _occurs with the sigmoid and tanh activation_ function because the derivatives of the sigmoid and tanh activation functions are between 0 to 0.25 and 0–1.
-    - Therefore, the updated weight values are small, and the new weight values are very similar to the old weight values. This leads to Vanishing Gradient problem.
-  - We can avoid this problem using the ReLU activation function because the gradient is 0 for negatives and zero input, and 1 for positive input. ( or _Leaky Relu_)
+    - Vanishing Gradient occurs when the derivative or slope will get `smaller and smaller` as we go backward with every layer during backpropagation.
+    - When weights update is very small or exponential small, the training time takes too much longer, and in the worst case, this _may completely stop the neural network training._
+      - A vanishing Gradient problem _occurs with the sigmoid and tanh activation_ function because the derivatives of the sigmoid and tanh activation functions are between 0 to 0.25 and 0–1.
+      - Therefore, the updated weight values are small, and the new weight values are very similar to the old weight values. This leads to Vanishing Gradient problem.
+    - We can avoid this problem using the ReLU activation function because the gradient is 0 for negatives and zero input, and 1 for positive input. ( or _Leaky Relu_)
 
-- What is Exploding Gradients?
+  - What is Exploding Gradients?
 
-  - Exploding gradient occurs when the derivatives or slope will get `bigger and bigger` as we go backward with every layer during backpropagation. This situation is the exact opposite of the vanishing gradients.
+    - Exploding gradient occurs when the derivatives or slope will get `bigger and bigger` as we go backward with every layer during backpropagation. This situation is the exact opposite of the vanishing gradients.
 
-    - This problem happens _because of weights, not because of the activation function_. Due to high weight values, the derivatives will also higher so that the new weight varies a lot to the older weight, and the gradient will never converge.
-    - So it may result in oscillating around minima and never come to a global minima point.
+      - This problem happens _because of weights, not because of the activation function_. Due to high weight values, the derivatives will also higher so that the new weight varies a lot to the older weight, and the gradient will never converge.
+      - So it may result in oscillating around minima and never come to a global minima point.
 
-  - [How to identify exploding gradients?](https://analyticsindiamag.com/complete-guide-to-exploding-gradient-problem/#:~:text=How%20to%20identify%20exploding%20gradients%3F)
+    - [How to identify exploding gradients?](https://analyticsindiamag.com/complete-guide-to-exploding-gradient-problem/#:~:text=How%20to%20identify%20exploding%20gradients%3F)
 
-    - If the model weights become unexpectedly large in the end.
-    - Your model has a poor loss.
-    - Or the model displays NaN loss whilst training.
-    - The gradient value for error persists over 1.0 for every subsequent iteration during training.
+      - If the model weights become unexpectedly large in the end.
+      - Your model has a poor loss.
+      - Or the model displays NaN loss whilst training.
+      - The gradient value for error persists over 1.0 for every subsequent iteration during training.
 
-  - [How to deal with an exploding gradient?](https://analyticsindiamag.com/complete-guide-to-exploding-gradient-problem/#:~:text=How%20to%20deal%20with%20an%20exploding%20gradient%3F)
-    - Re-Design the Network Model
-    - Use LSTM’s (Long short term memory)
-    - Gradient Clipping
-    - Weight Regularization
+    - [How to deal with an exploding gradient?](https://analyticsindiamag.com/complete-guide-to-exploding-gradient-problem/#:~:text=How%20to%20deal%20with%20an%20exploding%20gradient%3F)
+      - Re-Design the Network Model
+      - Use LSTM’s (Long short term memory)
+      - Gradient Clipping
+      - Weight Regularization
 
-**Resnet introduction**
+- **Resnet introduction**
 
-- `ResNet` is a Convolutional Neural Network (CNN) architecture that `overcame the “vanishing gradient”` problem, making it possible to construct networks with up to thousands of convolutional layers, which `outperform shallower networks.`
+  - `ResNet` is a Convolutional Neural Network (CNN) architecture that `overcame the “vanishing gradient”` problem, making it possible to construct networks with up to thousands of convolutional layers, which `outperform shallower networks.`
 
-- Why resnet works?
+  - Why resnet works?
 
-  - Here, we have something called Residual blocks.
-  - Many `Residual blocks` are stacked together to form a ResNet.
-  - We have `Skipped connections` which are the major part of ResNet.
-  - The following image below was provided by the authors in the original paper which denotes how a residual network works.
+    - Here, we have something called Residual blocks.
+    - Many `Residual blocks` are stacked together to form a ResNet.
+    - We have `Skipped connections` which are the major part of ResNet.
+    - The following image below was provided by the authors in the original paper which denotes how a residual network works.
 
-    - The idea is to connect the input of a layer directly to the output of a layer after skipping a few connections.
-    - We can see here, `x` is the input to the layer which we are directly using to connect to a layer after skipping the identity connections and if we think the output from identity connection to be `F(x)`.
-    - Then we can say the output will be `F(x) + x`.
+      - The idea is to connect the input of a layer directly to the output of a layer after skipping a few connections.
+      - We can see here, `x` is the input to the layer which we are directly using to connect to a layer after skipping the identity connections and if we think the output from identity connection to be `F(x)`.
+      - Then we can say the output will be `F(x) + x`.
 
-    <img src="https://neurohive.io/wp-content/uploads/2019/01/resnet-e1548261477164.png" width="60%">
+      <img src="https://neurohive.io/wp-content/uploads/2019/01/resnet-e1548261477164.png" width="60%">
 
-- Paper [_Deep Residual Learning for Image Recognition_](https://arxiv.org/pdf/1512.03385.pdf)
+  - Paper [_Deep Residual Learning for Image Recognition_](https://arxiv.org/pdf/1512.03385.pdf)
 
-**Transfer learning**
+- **Transfer learning**
 
-- [What is Transfer learning?](https://developer.ibm.com/articles/transfer-learning-for-deep-learning/)
+  - [What is Transfer learning?](https://developer.ibm.com/articles/transfer-learning-for-deep-learning/)
 
-  - Transfer learning is the method of starting with a pre-trained model and training it for a new — related — problem domain. The pre-trained network serves as transferred knowledge to be applied in another domain.
+    - Transfer learning is the method of starting with a pre-trained model and training it for a new — related — problem domain. The pre-trained network serves as transferred knowledge to be applied in another domain.
 
-- Methods for transfer learning
+  - Methods for transfer learning
 
-  - [_Feature transfer_](<https://developer.ibm.com/articles/transfer-learning-for-deep-learning/#:~:text=The%20idea%20behind%20feature%20transfer%20is%20then%20to%20use%20the%20input%20and%20feature%2Dextraction%20layers%20that%20have%20been%20trained%20with%20a%20given%20data%20set%20(with%20their%20weights%20and%20structure%20frozen)%20and%20train%20a%20new%20classification%20layer%20for%20the%20related%20problem%20domain>)
+    - [_Feature transfer_](<https://developer.ibm.com/articles/transfer-learning-for-deep-learning/#:~:text=The%20idea%20behind%20feature%20transfer%20is%20then%20to%20use%20the%20input%20and%20feature%2Dextraction%20layers%20that%20have%20been%20trained%20with%20a%20given%20data%20set%20(with%20their%20weights%20and%20structure%20frozen)%20and%20train%20a%20new%20classification%20layer%20for%20the%20related%20problem%20domain>)
 
-    - The idea behind feature transfer is then to use the input and feature-extraction layers that have been trained with a given data set (with their weights and structure frozen) and train a new classification layer for the related problem domain.
+      - The idea behind feature transfer is then to use the input and feature-extraction layers that have been trained with a given data set (with their weights and structure frozen) and train a new classification layer for the related problem domain.
 
-      <img src="https://developer.ibm.com/developer/default/articles/transfer-learning-for-deep-learning/images/Figure3.png">
+        <img src="https://developer.ibm.com/developer/default/articles/transfer-learning-for-deep-learning/images/Figure3.png">
 
-  - [_Fine-tuning_](https://developer.ibm.com/articles/transfer-learning-for-deep-learning/#:~:text=domains%20are%20similar.-,Fine%2Dtuning,-In%20the%20prior)
+    - [_Fine-tuning_](https://developer.ibm.com/articles/transfer-learning-for-deep-learning/#:~:text=domains%20are%20similar.-,Fine%2Dtuning,-In%20the%20prior)
 
-    - This fine-tuning could mean that we train the later layers of the deep learning network (meaning adjust the weights based upon the classification error) while leaving the earlier layers frozen.
-      <img src="https://developer.ibm.com/developer/default/articles/transfer-learning-for-deep-learning/images/Figure4.png">
+      - This fine-tuning could mean that we train the later layers of the deep learning network (meaning adjust the weights based upon the classification error) while leaving the earlier layers frozen.
+        <img src="https://developer.ibm.com/developer/default/articles/transfer-learning-for-deep-learning/images/Figure4.png">
 
-  - [_Using a pre-trained model_](https://developer.ibm.com/articles/transfer-learning-for-deep-learning/#:~:text=to%20be%20classified.-,Using%20a%20pre%2Dtrained%20model,-With%20feature%20transfer)
+    - [_Using a pre-trained model_](https://developer.ibm.com/articles/transfer-learning-for-deep-learning/#:~:text=to%20be%20classified.-,Using%20a%20pre%2Dtrained%20model,-With%20feature%20transfer)
 
-    - Using a pre-trained model, the model can be refined through feature transfer (train the classification layer) or by freezing some of the early convolutional layers and retraining the later ones.
-    - Given that the early convolutional layers detect general features that can be independent of the problem, retraining (or fine-tuning) the later convolutional layers where features are more specific and dependent on the problem can be useful.
+      - Using a pre-trained model, the model can be refined through feature transfer (train the classification layer) or by freezing some of the early convolutional layers and retraining the later ones.
+      - Given that the early convolutional layers detect general features that can be independent of the problem, retraining (or fine-tuning) the later convolutional layers where features are more specific and dependent on the problem can be useful.
 
-- When use Transfer learning?
-  <img src="https://cdn.hackernoon.com/hn-images/1*xGpYptYPEqGl6gWr6bHZEQ.png" width="60%">
+  - When use Transfer learning?
+    <img src="https://cdn.hackernoon.com/hn-images/1*xGpYptYPEqGl6gWr6bHZEQ.png" width="60%">
 
-  - [See more here!](https://phamdinhkhanh.github.io/2020/04/15/TransferLearning.html#6-kinh-nghi%E1%BB%87m-transfer-learning)
+    - [See more here!](https://phamdinhkhanh.github.io/2020/04/15/TransferLearning.html#6-kinh-nghi%E1%BB%87m-transfer-learning)
 
-**Data augmentation**
+- **Data augmentation**
 
-- Data augmentation in data analysis are techniques used to increase the amount of data by adding slightly modified copies of already existing data or newly created synthetic data from existing data. It acts as a regularizer and helps reduce overfitting when training a machine learning model.
-- [_Top 13 Data Augmentation Techniques: Comprehensive Guide_](https://research.aimultiple.com/data-augmentation-techniques/)
-  <img src="https://research.aimultiple.com/wp-content/uploads/2021/04/data-augmentation-techniques-800x450.png">
+  - Data augmentation in data analysis are techniques used to increase the amount of data by adding slightly modified copies of already existing data or newly created synthetic data from existing data. It acts as a regularizer and helps reduce overfitting when training a machine learning model.
+  - [_Top 13 Data Augmentation Techniques: Comprehensive Guide_](https://research.aimultiple.com/data-augmentation-techniques/)
+  - [_What is Data Augmentation? Techniques, Benefit & Examples_](https://research.aimultiple.com/data-augmentation/)
+    <img src="https://research.aimultiple.com/wp-content/uploads/2021/04/data-augmentation-techniques-800x450.png">
 
-**Data synthesis**
+- **Data synthesis**
 
-- Synthetic data, as the name suggests, is data that is artificially created rather than being generated by actual events. It is often created with the help of algorithms and is used for a wide range of activities, including as test data for new products and tools, for model validation, and in AI model training.
+  - Synthetic data, as the name suggests, is data that is artificially created rather than being generated by actual events. It is often created with the help of algorithms and is used for a wide range of activities, including as test data for new products and tools, for model validation, and in AI model training.
 
-- [_The Ultimate Guide to Synthetic Data: Uses, Benefits & Tools_](https://research.aimultiple.com/synthetic-data/)
+  - [_The Ultimate Guide to Synthetic Data: Uses, Benefits & Tools_](https://research.aimultiple.com/synthetic-data/)
 
 ---
 
@@ -744,7 +744,63 @@
 
 ---
 
-- Content
+- **Unsupervised Learning**
+
+  - As session `Unsupervised learning` in chapter [Introduce ML](#introduce-ml)
+
+- **Autoencoder (AE)**
+
+  - Autoencoder is a type of neural network that can be used to learn a compressed representation of raw data.
+    - An autoencoder is composed of an encoder and a decoder sub-models
+    - The autoencoder idea was a part of NN history for decades (LeCun et al, 1987).
+    - Traditionally an autoencoder is used for `dimensionality reduction` and feature learning.
+  - [See more here!](https://ml-cheatsheet.readthedocs.io/en/latest/architectures.html#autoencoder)
+    <img src="https://cdn.hackernoon.com/hn-images/1*-5D-CBTusUnmsbA6VYdY3A.png" width="80%">
+
+- **Autoencoder application**
+
+  - `Image denoising`
+  - `Image compression`
+  - `Text Retrieval`
+  - `Similar image search`
+
+- **Upsampling Techniques**
+
+  - [`See more here!`](https://towardsdatascience.com/transposed-convolution-demystified-84ca81b4baba)
+    - `Nearest Neighbors`
+    - `Bi-Linear Interpolation`
+    - `Bed Of Nails`
+    - `Max-Unpooling`
+    - `Transposed Convolutions`
+
+- **Convolutional Auto Encoder**
+
+  - [`Explain Transposed convolution`](https://d2l.ai/chapter_computer-vision/transposed-conv.html)
+
+  - `Stride = 1`
+
+    <img src="https://d2l.ai/_images/trans_conv.svg">
+
+  - `Stride = 2`
+
+    <img src="https://d2l.ai/_images/trans_conv_stride2.svg">
+
+  - Convolutional Auto Encoder
+
+    <img src="https://www.researchgate.net/profile/Xifeng-Guo/publication/320658590/figure/fig1/AS:614154637418504@1523437284408/The-structure-of-proposed-Convolutional-AutoEncoders-CAE-for-MNIST-In-the-middle-there.png" width="80%">
+
+  - [_Application Convolution AE_](https://iq.opengenus.org/applications-of-autoencoders/)
+
+    - `Dimensionality Reduction`
+    - `Image Compression`
+    - `Image Denoising`
+    - `Super Resolution`
+    - `Semantic Segmentation`
+    - `Feature Extraction`
+    - `Image generation`
+    - `Sequence to sequence prediction`
+    - `Recommendation system`
+    - `Etc.`
 
 ---
 
