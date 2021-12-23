@@ -8,25 +8,25 @@
 
 ---
 
-- [x] Introduce ML
+- [x] [Introduce ML](#introduce-ml)
 
-- [x] Linear regression
+- [x] [Linear regression](#linear-regression)
 
-- [x] Logistic regression
+- [x] [Logistic regression](#logistic-regression)
 
-- [x] Neural network
+- [x] [Neural network](#neural-network)
 
-- [x] Convolutional neural network
+- [x] [Convolutional neural network](#convolutional-neural-network)
 
-- [x] CNN Techniques
+- [x] [CNN Techniques](#cnn-techniques)
 
-- [ ] Autoencoder
+- [ ] [Autoencoder](#autoencoder)
 
-- [ ] GAN
+- [ ] [GAN](#gan)
 
-- [ ] Object detection
+- [ ] [Object detection](#object-detection)
 
-- [ ] RNN
+- [ ] [RNN](#rnn)
 
 ---
 
